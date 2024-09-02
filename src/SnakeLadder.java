@@ -2,12 +2,14 @@ import java.util.*;
 public class SnakeLadder {
     public static void main(String[] args) {
         int position = 0;
+        int rollCount = 0;
 
         System.out.println("Starting the Snake and Ladder game...");
 
         while (position < 100) {
             int dieRoll = rollDie();
-            System.out.println("Rolled a " + dieRoll);
+            rollCount++;
+            System.out.println("Roll " + rollCount + ": Rolled a " + dieRoll);
 
             int option = checkOption();
             if (option == 0) {
@@ -26,8 +28,7 @@ public class SnakeLadder {
             }
         }
 
-        System.out.println("Congratulations! You've reached the winning position 100!");
-
+        System.out.println("Congratulations! You've reached the winning position 100 in " + rollCount + " rolls!");
     }
 
     public static int rollDie() {
